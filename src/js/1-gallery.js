@@ -1,6 +1,4 @@
-// Описаний в документації
 import SimpleLightbox from 'simplelightbox';
-// Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const images = [
@@ -73,7 +71,7 @@ const gallery = document.querySelector('.gallery');
 
 const galleryHTML = images
   .map(
-    item => `<li class='item'><a class="gallery-link" href='${item.original}'>
+    item => `<li class='gallery-item'><a class="gallery-link" href='${item.original}'>
     <img
       class="gallery-image"
       src='${item.preview}'
@@ -89,10 +87,3 @@ new SimpleLightbox('.gallery li a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   new SimpleLightbox('.gallery li a', {
-//     captionsData: 'alt',
-//     captionDelay: 250,
-//   });
-// });
