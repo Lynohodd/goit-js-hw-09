@@ -1,17 +1,2 @@
-import"./assets/modulepreload-polyfill-B5Qt9EMX.js";const e=basicLightbox.create(`<form class="feedback-form" autocomplete="off">
-        <label class="label email-label">
-          Email
-          <input
-            class="text-in email-input"
-            type="email"
-            name="email"
-            autofocus
-          />
-        </label>
-        <label class="label message-label">
-          Message
-          <textarea class="text-in textarea" name="message" rows="8"></textarea>
-        </label>
-        <button class="button" type="submit">Submit</button>
-      </form>`);e.show();
+import"./assets/modulepreload-polyfill-B5Qt9EMX.js";let a={email:"",message:""};const l="feedback-form-state",e=document.querySelector(".feedback-form");document.querySelector(".email-input");document.querySelector(".textarea");e.addEventListener("input",s);function s(){a.message=e.elements.message.value,a.email=e.elements.email.value,localStorage.setItem(l,JSON.stringify(a))}const t=JSON.parse(localStorage.getItem(l))??{};Object.keys(t).length>0&&(a.email=t.email,a.message=t.message,e.elements.message.value=t.message,e.elements.email.value=t.email);e.addEventListener("submit",n);function n(m){if(m.preventDefault(),!(e.elements.email.value&&e.elements.message.value)){alert("Fill please all fields");return}console.log(a),localStorage.removeItem(l),a.email="",a.message="",e.elements.message.value="",e.elements.email.value=""}
 //# sourceMappingURL=2-form.js.map
