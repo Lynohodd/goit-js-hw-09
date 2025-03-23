@@ -73,18 +73,26 @@ const gallery = document.querySelector('.gallery');
 
 const galleryHTML = images
   .map(
-    item => `<a class="gallery-link" href='${item.original}'>
+    item => `<li class='item'><a class="gallery-link" href='${item.original}'>
     <img
       class="gallery-image"
       src='${item.preview}'
       alt="${item.description}"
     />
-  </a>`
+  </a></li>`
   )
   .join('');
 
 gallery.insertAdjacentHTML('beforeend', galleryHTML);
 
-document.addEventListener('DOMContentLoaded', () => {
-  new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
+new SimpleLightbox('.gallery li a', {
+  captionsData: 'alt',
+  captionDelay: 250,
 });
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   new SimpleLightbox('.gallery li a', {
+//     captionsData: 'alt',
+//     captionDelay: 250,
+//   });
+// });
